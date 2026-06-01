@@ -1,5 +1,11 @@
 package org.example;
 
+/**
+ *
+ * A busca binária é um algoritmo de alta eficiência para localizar um elemento em uma lista de dados.
+ * Ela funciona dividindo o espaço de busca pela metade a cada tentativa, exigindo obrigatoriamente que a estrutura esteja ordenada.
+ *
+ */
 public class BinarySearch {
     public static void main(String[] args) {
         System.out.println("====== Binary Search using Numbers ======");
@@ -10,8 +16,8 @@ public class BinarySearch {
 
         System.out.println("====== Binary Search using Strings ======");
 
-        String[] namesList = {"Alice", "Bob", "Charlie", "David", "Emma", "Frank", "George"};
-        String targett = "David";
+        String[] namesList = {"Alice", "Bob", "Charlie", "David", "Emma", "Frank", "George", "Hanna"};
+        String targett = "Charlie";
 
         int resultt = binarySearchString(namesList, targett);
         System.out.println("The name '" + targett + "' was found at index: " + resultt);
