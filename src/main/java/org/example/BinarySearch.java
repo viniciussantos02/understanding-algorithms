@@ -1,10 +1,14 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
- *
  * A busca binária é um algoritmo de alta eficiência para localizar um elemento em uma lista de dados.
  * Ela funciona dividindo o espaço de busca pela metade a cada tentativa, exigindo obrigatoriamente que a estrutura esteja ordenada.
- *
+ * Left, Right e Mid sao indices dentro da lista.
+ * O(logn) é a notacao big O para a complexidade de tempo do algoritimo
  */
 public class BinarySearch {
     public static void main(String[] args) {
@@ -21,6 +25,9 @@ public class BinarySearch {
 
         int resultt = binarySearchString(namesList, targett);
         System.out.println("The name '" + targett + "' was found at index: " + resultt);
+
+        System.out.println("====== Java Binary Search using Numbers and Strings ======");
+        javaBinarySearch();
     }
 
     private static int binarySearch(int[] list, int target) {
@@ -61,9 +68,21 @@ public class BinarySearch {
                 right = mid - 1;
             else
                 left = mid + 1;
-
         }
 
         return -1;
+    }
+
+    //Busca binaria usando recursos nativos do Java
+    private static void javaBinarySearch() {
+        long[] userIds = {100023L, 200045L, 350012L, 480099L, 500123L};
+
+        int index = Arrays.binarySearch(userIds, 350012L);
+        System.out.println("Usuário encontrado na posição: " + index);
+
+        List<String> videoTags = Arrays.asList("anime", "comedy", "drama", "horror", "sci-fi");
+
+        int tagIndex = Collections.binarySearch(videoTags, "horror");
+        System.out.println("Tag encontrada na posição: " + tagIndex);
     }
 }
